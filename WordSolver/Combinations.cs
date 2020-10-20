@@ -9,7 +9,7 @@ namespace WordSolver
     {
         // Permutations.GetCombinations(AvailableLetters, # of letters in word)
         // returns enumerable of unique combinations from available letters
-        static IEnumerable<IEnumerable<T>> GetCombinations<T>(IEnumerable<T> items, int count)
+        static public IEnumerable<IEnumerable<T>> GetCombinations<T>(IEnumerable<T> items, int count)
         {
             int i = 0;
             foreach (var item in items)
@@ -25,5 +25,20 @@ namespace WordSolver
                 ++i;
             }
         }
+
+        //static public List<List<char>> GetCombinations(List<char> items, int count)
+        //{
+        //    int i = 0;
+        //    foreach(char item in items)
+        //    {
+        //        if (count == 1)
+        //            yield return new List<char> { item };
+        //        else
+        //        {
+        //            foreach (List<char> result in GetCombinations(items.Skip(i + 1), count - 1))
+        //                yield return new List<char> { item }.Concat(result);
+        //        }
+        //    }
+        //}
     }
 }
